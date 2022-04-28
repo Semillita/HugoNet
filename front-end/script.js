@@ -1,6 +1,6 @@
 const BASE_SERVER = "http://localhost:8080"
 
-document.getElementById("submit").onclick = () => {
+document.getElementById("submit").addEventListener("click", () => {
     console.log("Post post!")
     let title = document.getElementById("title").value
     console.log(title)
@@ -9,7 +9,7 @@ document.getElementById("submit").onclick = () => {
         title: title,
         description: "Cool post"
     })
-}
+})
 
 function updatePosts(){
     axios.get(BASE_SERVER + "/post").then((res) => {
